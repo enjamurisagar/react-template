@@ -14,9 +14,10 @@ const App = () => {
   })
 
   const getData = () =>{
-    axios.get("/tasks")
-    .then(res => setData(res.data))
-    .catch(err => err.message)
+    axios
+      .get("https://to-do-api-ek9r.onrender.com/tasks")
+      .then((res) => setData(res.data))
+      .catch((err) => err.message);
   }
   useEffect(()=>{
     getData();
@@ -28,11 +29,7 @@ const App = () => {
 
     e.preventDefault();
     await axios
-      .post(
-        "/tasks",
-       task
-
-      )
+      .post("https://to-do-api-ek9r.onrender.com/tasks", task)
       .then((res) => console.log(res))
       .catch((err) => console.log(err.message));
       getData();
@@ -57,18 +54,20 @@ const App = () => {
 
   const editSubmit = async (e) =>{
     e.preventDefault();
-    await axios.put(`/tasks/${editText.id}`,editText)
-    .then(res => console.log(res))
-    .catch(err => err.message);
+    await axios
+      .put(`https://to-do-api-ek9r.onrender.com/tasks/${editText.id}`, editText)
+      .then((res) => console.log(res))
+      .catch((err) => err.message);
 
     setEdit(false);
     getData();
   }
 
   const deleteTask = async(item) =>{
-    await axios.delete(`/tasks/${item._id}`)
-    .then(res => console.log(res))
-    .catch(err => err.message);
+    await axios
+      .delete(`https://to-do-api-ek9r.onrender.com/tasks/${item._id}`)
+      .then((res) => console.log(res))
+      .catch((err) => err.message);
     getData();
   }
 
