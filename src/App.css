@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    transition: .3s;
+    transition-duration: 500ms;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    width: 100%;
+    height: 100%;
+}
+h1{
+    text-align: center;
+    margin: 3rem 0; 
+}
+form{
+    display: flex;
+    justify-content: center;
+    margin:2rem 1rem;
+}
+.input{
+    outline: none;
+    padding: .75rem;
+    border: 2px solid #000;
+    border-top:none ;
+    margin: 0 2rem;
+    font-size: 18px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.btn{
+    padding: .5rem 1rem;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #000;
+    border-radius: 20px;
+    font-size: 20px;
+    background: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tasks{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    /* background: red; */
+    width: 40%;
+    margin: 0.25rem auto;
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+.tasks:hover{
+    background: lightblue;
+}
+.task{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 19px;
+}
+.btns{
+    width: 30%;
+    /* background: yellow; */
+    display: flex;
+    justify-content: space-around;
+}
+.edit, .delete{
+    cursor: pointer;
+    padding: .5rem;
+    font-size: 18px;
+    outline: none;
+    background: none;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+.edit:hover{
+    background: lightgreen;
+    transition: .3s;
+    transition-duration: 300ms;
+    transform: scale(1.1);
+}
+.delete:hover{
+    background: red;
+    transition: .3s;
+    transition-duration: 300ms;
+    transform: scale(1.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/**EDIT **/
 
-.App-link {
-  color: #61dafb;
+.edit-container{
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edit-wrapper{
+    width: 50%;
+    margin: auto;
+    height: 30%;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 15px;
+}
+.edit-wrapper h2{
+    text-align: center;
+    font-size: 20px;
+    margin: 1rem 0;
+}
+.edit-wrapper .edit-input-div{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    
+}
+.edit-wrapper .edit-input-div input{
+    font-size: 18px;
+    outline: none;
+    padding: 0.5rem;
+}
+.edit-wrapper .edit-btns{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    
+}
+.edit-wrapper .edit-btns button{
+    margin:0 1rem ;
+}
+.edit-update:hover{
+    background: lightblue;
+}
+.edit-delete:hover{
+    background: red;
 }
